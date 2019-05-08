@@ -8,8 +8,8 @@
 
 - **DataSources文件夹**：plist文件及商品图片放置
 - **Model文件夹**：包含XXXShopsModel（店铺）与XXXGoodsModel（商品）
-- **View**：包含XXXShoppingCartsCell、XXXBottomView（全选合计结算视图）、XXXHeaderView（HeaderSection视图）
-- **Controller**：包含XXXShoppingCartsController，购物车控制器，负责协调Model和View，处理数据等
+- **View文件夹**：包含XXXShoppingCartsCell、XXXBottomView（全选合计结算视图）、XXXHeaderView（HeaderSection视图）
+- **Controller文件夹**：包含XXXShoppingCartsController，购物车控制器，负责协调Model和View，处理数据等
 - **第三方库**：Masonry、MJExtension、UITableView+FDTemplateLayoutCell，pods管理
 
 ##### 以上如有帮助欢迎右上角star
