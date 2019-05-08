@@ -18,6 +18,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) XXXShoppingCartsCell *shoppingCartsCell;
 @property (nonatomic,strong) XXXBottomView *bottomView;
+@property (nonatomic,strong) XXXHeaderView *headerView;
 //店铺array
 @property (nonatomic,strong) NSMutableArray *shopsArray;
 
@@ -62,7 +63,6 @@
     NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
     for (NSMutableDictionary *dict in dic[@"data"]) {
         XXXShopsModel *shopsModel = [XXXShopsModel modelWithDict:dict];
-#warning 一定要记得开辟空间
         //开辟空间
         shopsModel.items = [NSMutableArray array];
         for (NSDictionary *goodsDic in dict[@"items"]) {
@@ -141,6 +141,7 @@
     kWeakSelf
     XXXShopsModel *shopsModel = self.shopsArray[section];
     XXXHeaderView *headerView = [[XXXHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kCGRectH(40))];
+    self.headerView = headerView;
     headerView.section = section;
     headerView.shopsModel = shopsModel;
     headerView.nameLabel.text = shopsModel.shopName;
@@ -150,7 +151,6 @@
         }
         [weakSelf.tableView reloadData];
     };
-    
     BOOL isSelected = YES;
     for (XXXGoodsModel *goodsModel in shopsModel.items){
         if (goodsModel.isSelected == NO){
@@ -191,9 +191,13 @@
             [self.shopsArray removeObjectAtIndex:indexPath.section];
             [self.tableView reloadData];
         }
+        
+        [self updateHeaderSectionButtonState];
         [self updateAllSelectButtonState];
         [self updateSelectCount];
         [self updateTotalMoney];
+        [self.tableView reloadData];
+
     }
 }
 
@@ -230,6 +234,21 @@
         }
     }
     self.bottomView.allSelectButton.selected = isSelected;
+}
+
+//更新headerSection 选中状态
+- (void)updateHeaderSectionButtonState{
+    BOOL isSelected = YES;
+    for (XXXShopsModel *shopsModel in self.shopsArray) {
+        for (XXXGoodsModel *goodsModel in shopsModel.items){
+            if (goodsModel.isSelected == NO){
+                isSelected = NO;
+                break;
+            }
+        }
+    }
+    
+    self.headerView.storeSelectButton.selected = isSelected;
 }
 
 //更新底部商品个数
