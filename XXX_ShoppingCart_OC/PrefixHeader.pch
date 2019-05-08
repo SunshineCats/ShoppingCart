@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  XXX_ShoppingCart_OC
+//
+//  Created by PohlKepler on 4/29/19.
+//  Copyright © 2019 iOS. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#endif
+
+
+#ifdef __OBJC__
+
+#import "DefineHeader.h"
+#import "Masonry.h"
+#import <UITableView+FDTemplateLayoutCell.h> //cell自动撑高
+#import <MJExtension.h> // 数据解析
+#import <MBProgressHUD+BWMExtension.h> // 菊花条
+
+#endif
+
+

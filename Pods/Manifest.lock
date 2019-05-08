@@ -1,0 +1,32 @@
+PODS:
+  - Masonry (1.1.0)
+  - MBProgressHUD (0.9.2)
+  - "MBProgressHUD+BWMExtension (1.0.1)":
+    - MBProgressHUD (~> 0.9.1)
+  - MJExtension (3.0.17)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
+
+DEPENDENCIES:
+  - Masonry
+  - "MBProgressHUD+BWMExtension (~> 1.0.1)"
+  - MJExtension (~> 3.0.13)
+  - "UITableView+FDTemplateLayoutCell (~> 1.6)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - MBProgressHUD
+    - "MBProgressHUD+BWMExtension"
+    - MJExtension
+    - "UITableView+FDTemplateLayoutCell"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  "MBProgressHUD+BWMExtension": d0603a1c0b03ef74cae6a0986d63c0bdf34bedfe
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+
+PODFILE CHECKSUM: 217d62b4f6f3705343514b5231a0df5b621ae0fe
+
+COCOAPODS: 1.6.1
